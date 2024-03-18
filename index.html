@@ -72,9 +72,11 @@
                 // Get the email address and name from the input fields
                 var name = document.getElementById('name').value;
                 var email = document.getElementById('email').value;
+                var uniqueId = generateUniqueId();
 
                 // Data to send to Retool backend
                 var dataToSend = {
+                    id: uniqueID,
                     name: name,
                     email: email
                     // You can add more key-value pairs here as needed
@@ -105,6 +107,11 @@
                     // Handle error if fetch fails
                 });
             });
+            function generateUniqueId() {
+            var timestamp = new Date().getTime();
+            var randomNum = Math.floor(Math.random() * 10000); // Adjust the range as needed
+            return timestamp + '_' + randomNum;
+        }
         </script>
     </div>
 </body>
