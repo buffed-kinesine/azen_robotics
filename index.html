@@ -48,6 +48,21 @@
     </style>
 </head>
 <body>
+     <div class="container">
+        <h1>Welcome to RAG Chatbots</h1>
+        <h2>Revolutionizing Conversational AI</h2>
+        <p>Unlock the Future of Conversational AI</p>
+        <ul>
+            <li>Natural Conversations</li>
+            <li>Personalized Interaction</li>
+            <li>Versatility</li>
+            <li>Continuous Learning</li>
+        </ul>
+        <p>Stay in the Loop</p>
+        <form action="submit_email.php" method="post">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <input type="submit" value="Subscribe">
+    </div>
  <!-- Your HTML content goes here -->
     <input type="email" id="email" placeholder="Enter your email address">
     <button id="submitButton">Subscribe</button>
@@ -66,7 +81,7 @@
             };
 
             // URL of your Retool backend endpoint
-            var retoolBackendURL = 'https://your-retool-backend-url.com/api/data_collection';
+            var retoolBackendURL = 'https://api.retool.com/v1/workflows/9743db07-b041-4678-9da6-b4d7734c248d/startTrigger?workflowApiKey=retool_wk_7d1230034fe6485fbdd1abb2ad722e8d';
 
             // Send HTTP POST request to Retool backend
             fetch(retoolBackendURL, {
