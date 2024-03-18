@@ -48,23 +48,48 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to RAG Chatbots</h1>
-        <h2>Revolutionizing Conversational AI</h2>
-        <p>Unlock the Future of Conversational AI</p>
-        <ul>
-            <li>Natural Conversations</li>
-            <li>Personalized Interaction</li>
-            <li>Versatility</li>
-            <li>Continuous Learning</li>
-        </ul>
-        <p>Stay in the Loop</p>
-        <form action="submit_email.php" method="post">
-            <input type="email" name="email" placeholder="Enter your email address" required>
-            <input type="submit" value="Subscribe">
-        </form>
-        <p>Join the Conversation</p>
-        <a href="experience_rag_chatbots.html"><button>Experience RAG Chatbots</button></a>
-    </div>
+ <!-- Your HTML content goes here -->
+    <input type="email" id="email" placeholder="Enter your email address">
+    <button id="submitButton">Subscribe</button>
+
+    <!-- Include your JavaScript code -->
+    <script>
+        // Add an event listener to the submit button
+        document.getElementById('submitButton').addEventListener('click', function() {
+            // Get the email address from the input field
+            var email = document.getElementById('email').value;
+
+            // Data to send to Retool backend
+            var dataToSend = {
+                email: email
+                // You can add more key-value pairs here as needed
+            };
+
+            // URL of your Retool backend endpoint
+            var retoolBackendURL = 'https://your-retool-backend-url.com/api/data_collection';
+
+            // Send HTTP POST request to Retool backend
+            fetch(retoolBackendURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataToSend)
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Data sent successfully to Retool backend');
+                    // Handle success response if needed
+                } else {
+                    console.error('Failed to send data to Retool backend');
+                    // Handle error response if needed
+                }
+            })
+            .catch(error => {
+                console.error('Error sending data to Retool backend:', error);
+                // Handle error if fetch fails
+            });
+        });
+    </script>
 </body>
 </html>
