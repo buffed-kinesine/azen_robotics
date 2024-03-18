@@ -1,0 +1,31 @@
+// Data to send to Retool backend
+var dataToSend = {
+    key1: 'value1',
+    key2: 'value2',
+    // Add more key-value pairs as needed
+};
+
+// URL of your Retool backend endpoint
+var retoolBackendURL = 'https://api.retool.com/v1/workflows/9743db07-b041-4678-9da6-b4d7734c248d/startTrigger?workflowApiKey=retool_wk_7d1230034fe6485fbdd1abb2ad722e8d';
+
+// Send HTTP POST request to Retool backend
+fetch(retoolBackendURL, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dataToSend)
+})
+.then(response => {
+    if (response.ok) {
+        console.log('Data sent successfully to Retool backend');
+        // Handle success response if needed
+    } else {
+        console.error('Failed to send data to Retool backend');
+        // Handle error response if needed
+    }
+})
+.catch(error => {
+    console.error('Error sending data to Retool backend:', error);
+    // Handle error if fetch fails
+});
