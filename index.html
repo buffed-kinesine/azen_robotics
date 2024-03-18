@@ -68,8 +68,8 @@
         </ul>
         <p>Stay in the Loop</p>
         <form action="submit_email.php" method="post">
-            <input type="email" id="email" placeholder="Enter your email address">
             <input type="name" id="name" placeholder="Enter your name">
+            <input type="email" id="email" placeholder="Enter your email address">
             <button id="submitButton">Subscribe</button>
 
             <!-- Include your JavaScript code -->
@@ -78,6 +78,7 @@
                 document.getElementById('submitButton').addEventListener('click', function() {
                     // Get the email address from the input field
                     var email = document.getElementById('email').value;
+                    var name = document.getElementById('name').value;
         
                     // Data to send to Retool backend
                     var dataToSend = {
