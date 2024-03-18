@@ -26,6 +26,14 @@
         form {
             text-align: center;
         }
+        input[type="name"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            
         input[type="email"] {
             width: 100%;
             padding: 10px;
@@ -61,6 +69,7 @@
         <p>Stay in the Loop</p>
         <form action="submit_email.php" method="post">
             <input type="email" id="email" placeholder="Enter your email address">
+            <input type="name" id="name" placeholder="Enter your name">
             <button id="submitButton">Subscribe</button>
 
             <!-- Include your JavaScript code -->
@@ -72,6 +81,7 @@
         
                     // Data to send to Retool backend
                     var dataToSend = {
+                        name: name
                         email: email
                         // You can add more key-value pairs here as needed
                     };
